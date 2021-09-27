@@ -19,10 +19,10 @@ body {
 }
 
 h1 {
-    font-size: 64px;
+    font-size: 3.8rem;
 }
 h2 {
-    font-size: 40px;
+    font-size: 2.2rem;
     }
 
 div {
@@ -35,15 +35,19 @@ color: var(--blackih);
 }
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: 29% 42% 29%;
     row-gap: 10%;
     padding-top: 40px;
 
  
 }
 
-.gridspecial {
+.top-container {
+    height: 98vh;
 
+}
+
+.gridspecial {
     text-align: center;
 }
 
@@ -52,7 +56,7 @@ color: var(--blackih);
 }
 .avatar {
     border-radius: 50%;
-    height: var(--avatarheight);
+  width: 110px;
 }
 
 .grid2, .grid5 {
@@ -81,12 +85,12 @@ color: var(--blackih);
 a.button:link
 a.button:visited{
     border: 5px solid black;
-
-
-
 }
 
-
+.button:hover {
+    opacity: 0.67;
+    cursor: pointer
+}
 .btn-green {
     background-color: var(--greenblue);
     color: var(--white98);
@@ -110,12 +114,12 @@ a.button:visited{
 
     
 }
-
 .description {
     margin-bottom: 60px;
     font-size: 18px;
     text-align: center;
 }
+
 
 .version {
     color: var(--bluegreen)
@@ -123,35 +127,59 @@ a.button:visited{
 
 .page-number {
     text-align: center;
-    bottom: 1px;
-    left: 33vw;
-position: relative;
-display: block;
-margin: 25vh;
-z-index: 2;
+ bottom: 50px;
+ left: 48%;
+position: absolute;
 
 
 }
-.page-number > span {
+.page-number-span {
     border-radius: 50%;
     border: 1px solid var(--grey-custom);
-  padding: 12px;
+  padding: 16px;
  
-   
+    }
+
+.page2{
+        bottom: -80px;
+        position: absolute;
+        z-index: 2;
+    }
+
+.page2-inside {
+    background-color: white;
 }
 
-.page-number > span::after {
+.page2-description{
+padding-bottom: 70px;
+}
+
+.line {
+    position: absolute;
+   min-width: 90px;
+       height: 1px;
+    transform: rotate(90deg);
+   bottom: 150px;
+   left: calc(48% - 20px);
+background-color: var(--grey-custom);}
+
+.page2-line {
+    bottom: 10px;
+    left: calc(48% - 16px);
+}
+
+/*
+.page-number-span::after {
     content: "";
     top: -36px;
     left: -8px;
     border: 1px solid var(--grey-custom);
-    height: 1px;
     background-color: var(--grey-custom);
     position: relative;
-}
+}*/
 
 .image-grid-containter {
-    margin-top: 3vh;
+
     display: grid;
 grid-template-columns: auto auto auto auto;
 column-gap: 20px;
@@ -162,7 +190,7 @@ margin-bottom: 10vh;
 }
 
 .image-in-grid {
-    max-height: 242px;
+    max-height: 320px;
     border-radius: 8px;
 
 }
@@ -182,18 +210,10 @@ margin-bottom: 10vh;
     text-align: center;
 max-width: 33vw;
 padding-right: 33%;
-padding-left: 33%;}
-
-.second-page {
-padding: 0;
-left: 0vw;}
+padding-left: 33%;
+position: relative;}
 
 
-.second-page > span::after {
-   
-    left: -11px;
-
-}
 
 .like-a-footer {
  text-align: center;  
@@ -209,7 +229,7 @@ left: 0vw;}
  margin:0;
  min-height: 400px;
  position: relative;
- top: -26vh;
+
 }
 
 .heading-botom {
@@ -230,4 +250,107 @@ color: white;
 top: 40%;
 position: relative;
 
+}
+
+
+
+@media only screen and (max-width: 1050px) {
+.grid-container{
+   grid-template-columns: 50% 50%;
+   margin: 0;
+   padding: 0;
+   row-gap: 5%;
+   padding-top: 40px;
+   position: relative; 
+    
+}
+h1 {
+    font-size: 3rem;
+}
+
+.right{
+    transform: translateX(0px);
+    grid-column: 2;
+    grid-template-columns: 33% 33% 33%;
+ 
+}
+.left{
+    transform: translateX(0px);
+    margin: 0;
+    padding: 0;
+    grid-column: 1;
+    grid-template-columns: 33% 33% 33%;
+
+
+}
+
+.avatar {
+    max-width: 14vw;
+    max-height: 136px;
+
+}
+.griditem{
+    padding: 1px;
+    max-width: 14vw;
+    max-height: 140px;
+
+}
+
+.grid7, .grid10, .grid9, .grid12 {
+    transform: translateY(-50px);
+}
+
+.grid8, .grid11 {
+    transform: translateY(0);
+}
+.center {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+}
+.image-in-grid {
+    max-width: 33vw;
+    border-radius: 8px;
+
+}
+
+
+.image-grid-containter {
+    grid-template-columns: auto auto;
+    padding-top: 50px;
+}   
+
+
+
+ .centered-box{
+    max-width: 85vw;
+    padding-right: 5%;
+    padding-left: 5%
+  }
+  .like-a-footer {
+      display: flex;
+      text-align: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+      
+  }
+
+  .page-1-number{
+bottom: -170px;
+  }
+
+  .page-1-number-line {
+bottom: -70px;
+  }
+}
+
+
+@media only screen and (min-width: 600px) {
+    .image-grid-containter {
+        grid-template-columns: auto auto auto auto;
+    }   
+    .image-in-grid {
+        max-width: 22vw;
+        border-radius: 8px;
+    
+    }
 }
